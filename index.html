@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Spin Wheel</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        document.oncontextmenu = function(){ return false; }
+    </script>
+    <script type="module">
+        import { confetti } from 'https://cdn.jsdelivr.net/npm/tsparticles-confetti/+esm';
+        window.confetti = confetti;
+    </script>
+    <style>
+        .result-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: #c0676b;
+            color: white;
+            border-radius: 8px;
+            font-size: 18px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            white-space: pre-line;
+            text-align: center;
+        }
+        
+        .result-display.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wheel-container">
+            <div class="confetti-container"></div>
+            <img id="wheelImage" src="./images/20241121 SpinWheel V1.png" alt="轉盤">
+            <img id="pointerImage" src="./images/20241121 zhizhen V1.png" alt="指針">
+        </div>
+        <div class="controls">
+            <button id="fullscreenBtn" class="fullscreen-btn">Full Screen</button>
+        </div>
+        <div class="result-display"></div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/script.min.js"></script>
+</body>
+</html>
